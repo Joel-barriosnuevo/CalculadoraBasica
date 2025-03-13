@@ -81,26 +81,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         try {
             int num1 = Integer.parseInt(edt_num1.getText().toString());
             int num2 = Integer.parseInt(edt_num2.getText().toString());
+            double num1Double = Double.parseDouble(edt_num1.getText().toString());
+            double num2Double = Double.parseDouble(edt_num2.getText().toString());
             String operacion = operaciones_spinner.getSelectedItem().toString();
-            double resultado = 0;
+            int resultado = 0;
+            double resultadoDouble = 0.0;
+            boolean isDivision = false;
 
 
             switch (operacion) {
                 case "Suma":
                     resultado = num1 + num2;
-                    resultado = (int)resultado;
+
                     break;
                 case "Resta":
                     resultado = num1 - num2;
-                    resultado = (int)resultado;
+
                     break;
                 case "Multiplicación":
                     resultado = num1 * num2;
-                    resultado = (int)resultado;
+
                     break;
                 case "División":
-                    if (num2 != 0) {
-                        resultado = num1 / num2;
+                    if (num2Double != 0) {
+                       resultadoDouble = num1Double / num2Double;
+                       isDivision = true;
                     } else {
                         Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
                         return;
@@ -110,7 +115,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     Toast.makeText(this, "Operación no válida", Toast.LENGTH_SHORT).show();
                     return;
             }
-            text_result.setText(String.valueOf(resultado));
+            if (isDivision){
+                text_result.setText(String.valueOf(resultadoDouble));
+            }else{
+                text_result.setText(String.valueOf(resultado));
+            }
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Ingrese números válidos", Toast.LENGTH_SHORT).show();
         }
