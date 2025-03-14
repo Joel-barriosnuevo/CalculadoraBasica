@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:orientation="vertical"
+    android:background="@drawable/fondop"
+    android:gravity="center_horizontal|center_vertical"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3E86E0"
+        android:textStyle="bold"
+        android:text="CALCULADORA"
+        android:textSize="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edt_num1"
+            android:layout_marginRight="10dp"
+            android:inputType="number"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="|||"
+            android:textColor="#94CFD5"
+            android:id="@+id/txt_signo"/>
+
+        <EditText
+            android:id="@+id/edt_num2"
+            android:layout_marginRight="10dp"
+            android:inputType="number"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="="
+            android:textColor="#D8A3F9"/>
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="0"
+            android:textColor="#94CFD5"
+            android:layout_marginLeft="10dp"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+
+        <Spinner
+            android:id="@+id/operaciones_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/opciones"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="148dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#B938AAE8"
+        android:text="CALCULAR" />
+
+</LinearLayout>
